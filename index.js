@@ -4,7 +4,7 @@ const {
   atualizar: atualizarCidade,
   remover: removerCidade,
   listagem: listarCidades,
-} = require( "c:/Users/caleb/Repositórios/Regi-o/cidade");
+} = require("./cidade.js");
 const {
   criar: criarEstado,
   atualizar: atualizarEstado,
@@ -75,9 +75,11 @@ while (true) {
       removerPais();
       break;
     case "13":
+      console.log("Saindo do programa. Até logo!");
       process.exit();
     default:
       console.log("Opção inválida, tente novamente.");
       break;
   }
+  
 }
