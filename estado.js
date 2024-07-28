@@ -1,4 +1,4 @@
-const prompt = require("prompt-sync");
+const prompt = require("prompt-sync")();
 const { lerIndicePais } = require("./pais");
 
 const estados = [];
@@ -7,13 +7,12 @@ const lerIndiceEstado = () => {
   listarEstados();
 
   if (estados.length > 0) {
-    const indice =
-      prompt("Digite o indice do estado que você deseja atualizar: ") - 1;
+    const indice = prompt("Digite o índice do estado que você deseja atualizar: ") - 1;
 
     if (indice >= 0 && indice < estados.length) {
       return indice;
     } else {
-      console.log("Indice inválido");
+      console.log("Índice inválido");
     }
   }
 };
@@ -37,7 +36,6 @@ const criarEstado = () => {
 
   if (estado != undefined) {
     estados.push(estado);
-
     console.log("Estado criado com sucesso");
   }
 };
@@ -60,7 +58,6 @@ const atualizarEstado = () => {
 
     if (estado != undefined) {
       estados[indice] = estado;
-
       console.log("Estado atualizado com sucesso");
     }
   }
@@ -70,7 +67,6 @@ const removerEstado = () => {
   const indice = lerIndiceEstado();
   if (indice != undefined) {
     estados.splice(indice, 1);
-
     console.log("Estado removido com sucesso");
   }
 };
@@ -80,4 +76,5 @@ module.exports = {
   listarEstados,
   atualizarEstado,
   removerEstado,
+  lerIndiceEstado,
 };

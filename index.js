@@ -1,37 +1,37 @@
 const prompt = require("prompt-sync")();
 const {
-  criar: criarCidade,
-  atualizar: atualizarCidade,
-  remover: removerCidade,
-  listagem: listarCidades,
-} = require("./cidade.js");
+  criarCidade,
+  listarCidades,
+  atualizarCidade,
+  removerCidade,
+} = require("./cidade");
 const {
-  criar: criarEstado,
-  atualizar: atualizarEstado,
-  remover: removerEstado,
-  listagem: listarEstados,
-} = require("./estado.js");
+  criarEstado,
+  listarEstados,
+  atualizarEstado,
+  removerEstado,
+} = require("./estado");
 const {
-  criar: criarPais,
-  atualizar: atualizarPais,
-  remover: removerPais,
-  listagem: listarPaises,
-} = require("./pais.js");
+  criarPais,
+  listarPaises,
+  atualizarPais,
+  removerPais,
+} = require("./pais");
 
 while (true) {
   console.log(`
-    1 - Criar Cidade
-    2 - Listar Cidades
-    3 - Atualizar Cidade
-    4 - Remover Cidade
+    1 - Criar País
+    2 - Listar Países
+    3 - Atualizar País
+    4 - Remover País
     5 - Criar Estado
     6 - Listar Estados
     7 - Atualizar Estado
     8 - Remover Estado
-    9 - Criar País
-    10 - Listar Países
-    11 - Atualizar País
-    12 - Remover País
+    9 - Criar Cidade
+    10 - Listar Cidades
+    11 - Atualizar Cidade
+    12 - Remover Cidade
     13 - Sair
   `);
 
@@ -39,16 +39,16 @@ while (true) {
 
   switch (opcao) {
     case "1":
-      criarCidade();
+        criarPais();
       break;
     case "2":
-      listarCidades();
+        listarPaises();
       break;
     case "3":
-      atualizarCidade();
+        atualizarPais();
       break;
     case "4":
-      removerCidade();
+        removerPais();
       break;
     case "5":
       criarEstado();
@@ -63,16 +63,17 @@ while (true) {
       removerEstado();
       break;
     case "9":
-      criarPais();
+        criarCidade();
       break;
     case "10":
-      listarPaises();
+        listarCidades();
+      
       break;
     case "11":
-      atualizarPais();
+        atualizarCidade();
       break;
     case "12":
-      removerPais();
+        removerCidade();
       break;
     case "13":
       console.log("Saindo do programa. Até logo!");
@@ -81,5 +82,4 @@ while (true) {
       console.log("Opção inválida, tente novamente.");
       break;
   }
-  
 }
